@@ -1,2 +1,29 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Content</th>
+      <th>commentable_type</th>
+      <th>commentable_id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comment.each do |comment| %>
+      <tr>
+        <td><%= comment.id %></td>
+        <td><%= raw(comment.content) %></td>
+        <td><%= comment.commentable_type %></td>
+        <td><%= comment.commentable_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Article', new_article_path, class: "btn-btn primary" %>

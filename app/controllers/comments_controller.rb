@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def index
     @commentable = Article.find(params[:article_id])
     @comments = @commentable.comments
+    @comment = Comment.all
   end
 
   def new
