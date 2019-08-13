@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @photo.filename %>
+</p>
+
+<h2>Comments</h2>
+<% if @photo.comments.present? %>
+	<%= render "comments/comments" %>
+<% else %>
+	<%= render "comments/form" %>
+<% end %>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
