@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
+  
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :name, "search_by_name" %>
+      <%= f.text_field :name_cont %>
+    </div>
 
+    <div class="actions">
+      <%= f.submit "search" %>
+    </div>
+  <% end %>
 <table>
   <thead>
     <tr>
