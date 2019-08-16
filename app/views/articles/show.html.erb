@@ -1,4 +1,22 @@
 <p id="notice"><%= notice %></p>
+<%#= link_to 'Upvote', like_article_path(@article, upvote: true), class: 'like-btn fa-fa-thumbs-up fa-3x', method: :post, remote: :true %>
+	<!-- <div>
+		<span><p><i ></i>like</p></span>
+	</div>
+<%# end %> -->	
+<%#= link_to 'Down Vote', like_article_path(@article, downvote: true), class: 'like-btn fa-fa-thumbs-up fa-3x', method: :post, remote: :true %>
+
+<% if user_signed_in? %>
+  <% if current_user.liked? @article %>
+      <%= link_to "Dislike", dislike_article_path(@article), class: 'vote', method: :put %>
+  <% else %>
+      <%= link_to "Like", like_article_path(@article), class: 'vote', method: :put %>
+  <% end %>
+  <span> · </span>
+<% end %>
+
+<%= @article.get_likes.size %> users like this
+<br>
 
 <p>
   <strong>Name:</strong>

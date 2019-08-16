@@ -26,6 +26,18 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def like
+    @article = Article.find(params[:id])
+    @article.liked_by current_user
+    redirect_to @article
+  end
+
+  def dislike
+      @article = Article.find(params[:id])
+      @article.disliked_by current_user
+      redirect_to @article
+  end
+
   # POST /articles
   # POST /articles.json
   def create

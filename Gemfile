@@ -57,3 +57,4 @@ gem 'rubocop', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'ransack'
+gem 'acts_as_votable', '~> 0.12.0'
